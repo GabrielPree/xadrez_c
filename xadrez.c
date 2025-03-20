@@ -2,7 +2,7 @@
  
 int main() {
     //variaveis para armazenar a posicao das peças
-    int torre = 0, bispo = 0;
+    int torre = 0, bispo = 0, rainha = 0;
    
     //movimentação da torre
     printf("Torre move-se para:\n");
@@ -18,6 +18,11 @@ int main() {
         bispo++;
     } while (bispo < 5);
 
-   
+    //movimentação da rainha
+    printf("\nRainha move-se para:\n");
+    for (rainha; rainha < 8; rainha++) {
+        printf("Esquerda\n");
+    }
+    
     return 0;
 }
