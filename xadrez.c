@@ -1,28 +1,40 @@
 #include <stdio.h>
- 
+
+//função recursiva para movimentação da torre
+void moverTorre(int casas) {
+    if (casas > 0) {
+        printf("direita\n");
+        moverTorre(casas - 1);
+    }
+}
+
+//função recursiva para movimentação do bispo
+void moverBispo(int casas) {
+    for (int i = 0; i < casas; i++) {
+        for (int j = 0; j < 1; j++) {
+            printf("Cima, Direita\n");
+        }
+    }
+}
+
+void moverRainha(int casas) {
+    if (casas > 0) {
+        printf("Esquerda\n");
+        moverRainha(casas - 1);
+    }
+}
+
 int main() {
     //variaveis para armazenar a posicao das peças
-    int torre = 0, bispo = 0, rainha = 0, cavalo = 1;
-   
-    //movimentação da torre
-    printf("Torre move-se para:\n");
-    while (torre < 5) {
-        printf("Direita\n");
-       torre++;
-    }
-   
-    //movimentação do bispo
-    printf("\nBispo move-se para:\n");
-    do{
-        printf("Cima, Direita\n");
-        bispo++;
-    } while (bispo < 5);
+    int torre = 5, bispo = 5, rainha = 8, cavalo = 1;
+    
 
-    //movimentação da rainha
+    printf("Torre move-se para:\n");
+    moverTorre(torre);
+    printf("\nBispo move-se para:\n");
+    moverBispo(bispo);
     printf("\nRainha move-se para:\n");
-    for (rainha; rainha < 8; rainha++) {
-        printf("Esquerda\n");
-    }
+    moverRainha(rainha);
 
     //movimentação do cavalo
     printf("\nCavalo move-se para:\n");
